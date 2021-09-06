@@ -6,9 +6,7 @@ import Flex from "../../components/Flex/Flex";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Link from "../../components/Link/Link";
 import Skeleton from "../../components/Skeleton/Skeleton";
-import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
-import MenuButton from "./MenuButton";
 import * as IconModule from "./icons";
 import { socials, MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
@@ -21,12 +19,13 @@ const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 const Container = styled.div`
   flex: none;
   padding: 8px 4px;
-  background-color: #271717;
-  border-top: solid 2px rgb(134 4 4 / 52%);
+  background-color: ${({ theme }) => theme.nav.background};
+  border-top: solid 2px rgba(133, 133, 133, 0.1);
 `;
 
 const PriceLink = styled.a`
-  display: flex;
+  display: inline-block;
+  margin-top:15px;
   align-items: center;
   svg {
     transition: transform 0.3s;
@@ -38,20 +37,53 @@ const PriceLink = styled.a`
   }
 `;
 
+const PriceLinkWraith = styled.a`
+  display: inline-block;
+  margin-top:15px;
+  margin-bottom:15px;
+  align-items: center;
+  svg {
+    transition: transform 0.3s;
+  }
+  :hover {
+    svg {
+      transform: scale(1.2);
+    }
+  }
+`;
+
+const Break = styled.div`
+  flex-basis: 100%;
+  height: 0;
+`;
+
+const PriceText = styled.div`
+  color: #c9c4d4;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  bottom: 8px;
+`;
+
 const SettingsEntry = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: 0 8px;
 `;
 
 const SocialEntry = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: ${MENU_ENTRY_HEIGHT}px;
+  height: 150px;
   padding: 0 16px;
+  text-align: center;
+`;
+
+const FlexSyfin = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const PanelFooter: React.FC<Props> = ({
@@ -59,8 +91,8 @@ const PanelFooter: React.FC<Props> = ({
   pushNav,
   toggleTheme,
   isDark,
-  cakePriceUsd,
-  wraPriceUsd,
+  wraithPriceUsd,
+  syfinPriceUsd,
   currentLang,
   langs,
   setLang,
@@ -79,21 +111,28 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <SocialEntry>
-        {cakePriceUsd ? (
+        {syfinPriceUsd ? (
           <PriceLink href={priceLink} target="_blank">
-            <PancakeRoundIcon width="24px" mr="8px" />
-            <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
             <SYFRoundIcon width="24px" mr="8px" />
-            <Text color="textSubtle" bold>{`$${wraPriceUsd.toFixed(3)}`}</Text>
+            <PriceText>{`$${syfinPriceUsd.toFixed(9)}`}</PriceText>
           </PriceLink>
         ) : (
           <Skeleton width={80} height={24} />
         )}
-        <Flex>
+        <Break></Break>
+        {wraithPriceUsd ? (
+          <PriceLinkWraith href={priceLink} target="_blank">
+            <PancakeRoundIcon width="24px" mr="8px" />
+            <PriceText>{`$${wraithPriceUsd.toFixed(4)}`}</PriceText>
+          </PriceLinkWraith>
+        ) : (
+          <Skeleton width={80} height={24} />
+        )}
+        <FlexSyfin>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
             const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
-            const mr = index < socials.length - 1 ? "24px" : 0;
+            const mr = index < socials.length - 1 ? "8px" : 0;
             if (social.items) {
               return (
                 <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
@@ -111,40 +150,8 @@ const PanelFooter: React.FC<Props> = ({
               </Link>
             );
           })}
-        </Flex>
+        </FlexSyfin>
       </SocialEntry>
-      <SettingsEntry>
-        {/* <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-          {/* alignItems center is a Safari fix */}
-          {/* <Flex alignItems="center">
-            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-            <Text color="textDisabled" mx="4px">
-              /
-            </Text>
-            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-          </Flex>
-        </Button> */}
-        <Dropdown
-          position="top-right"
-          target={
-            <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
-              <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-            </Button>
-          }
-        >
-          {/* {langs.map((lang) => (
-            <MenuButton
-              key={lang.code}
-              fullWidth
-              onClick={() => setLang(lang)}
-              // Safari fix
-              style={{ minHeight: "32px", height: "auto" }}
-            >
-              {lang.language}
-            </MenuButton>
-          ))} */}
-        </Dropdown>
-      </SettingsEntry>
     </Container>
   );
 };
