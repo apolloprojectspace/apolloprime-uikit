@@ -28,11 +28,13 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   padding-right: 16px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: solid 2px rgba(133, 133, 133, 0.1);
+  background-color: #271717;
+  border-bottom: solid 2px rgb(255 0 0 / 50%);
   z-index: 20;
   transform: translate3d(0, 0, 0);
 `;
+
+// ${({ theme }) => theme.nav.background}; for stylednav bg
 
 const BodyWrapper = styled.div`
   position: relative;

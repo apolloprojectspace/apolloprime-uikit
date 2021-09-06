@@ -51,11 +51,11 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
       </MenuButton>
       {isAbsoluteUrl ? (
         <StyledLink as="a" href={href} aria-label="Wraith home page">
-          {innerLogo}
+          {/* {innerLogo} */}
         </StyledLink>
       ) : (
         <StyledLink to={href} aria-label="Wraith home page">
-          {innerLogo}
+          {/* {innerLogo} */}
         </StyledLink>
       )}
     </Flex>
