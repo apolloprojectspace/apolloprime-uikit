@@ -119,7 +119,7 @@ const PanelFooter: React.FC<Props> = ({
         ) : (
           <Skeleton width={80} height={24} />
         )}
-        <Break></Break>
+        <Break><br /></Break>
         {wraithPriceUsd ? (
           <PriceLinkWraith href={priceLink} target="_blank">
             <PancakeRoundIcon width="24px" mr="8px" />
