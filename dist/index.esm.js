@@ -1748,7 +1748,7 @@ var Modal = function (_a) {
 };
 var templateObject_1$g, templateObject_2$6, templateObject_3$3;
 
-var Overlay = styled.div.attrs({ role: "presentation" })(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #452a7a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #452a7a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
+var Overlay = styled.div.attrs({ role: "presentation" })(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #541616;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #541616;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
     var show = _a.show;
     return (show ? 0.6 : 0);
 }, function (_a) {
@@ -2103,67 +2103,23 @@ var links = [
 ];
 var socials = [
     {
-        label: "Telegram",
-        icon: "TelegramIcon",
-        items: [
-            {
-                label: "English",
-                href: "https://t.me/fantomsyfin",
-            },
-            // {
-            //   label: "Bahasa Indonesia",
-            //   href: "https://t.me/PancakeSwapIndonesia",
-            // },
-            // {
-            //   label: "中文",
-            //   href: "https://t.me/PancakeSwap_CN",
-            // },
-            // {
-            //   label: "Tiếng Việt",
-            //   href: "https://t.me/PancakeSwapVN",
-            // },
-            // {
-            //   label: "Italiano",
-            //   href: "https://t.me/pancakeswap_ita",
-            // },
-            // {
-            //   label: "русский",
-            //   href: "https://t.me/pancakeswap_ru",
-            // },
-            // {
-            //   label: "Türkiye",
-            //   href: "https://t.me/pancakeswapturkiye",
-            // },
-            // {
-            //   label: "Português",
-            //   href: "https://t.me/PancakeSwapPortuguese",
-            // },
-            // {
-            //   label: "Español",
-            //   href: "https://t.me/PancakeswapEs",
-            // },
-            // {
-            //   label: "日本語",
-            //   href: "https://t.me/pancakeswapjp",
-            // },
-            // {
-            //   label: "Français",
-            //   href: "https://t.me/pancakeswapfr",
-            // },
-            {
-                label: "Announcements",
-                href: "https://t.me/fantomsyfin",
-            },
-            // {
-            //   label: "Whale Alert",
-            //   href: "https://t.me/PancakeSwapWhales",
-            // },
-        ],
-    },
-    {
         label: "Twitter",
         icon: "TwitterIcon",
-        href: "https://twitter.com/syfinance",
+        items: [
+            {
+                label: "Twitter @syfinance",
+                href: "https://twitter.com/syfinance",
+            },
+            {
+                label: "Twitter @wraithswap",
+                href: "https://twitter.com/wraithswap",
+            }
+        ]
+    },
+    {
+        label: "Telegram",
+        icon: "TelegramIcon",
+        href: "https://t.me/fantomsyfin",
     },
 ];
 var MENU_HEIGHT = 64;
@@ -2751,10 +2707,10 @@ var baseColors = {
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", bgimg: "url('images/wraithbgwhite.jpg')", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", bgimg: "url('images/wraithbgwhite.jpg')", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#541616", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#ffa16b", background: "#2F0006", bgimg: "url('images/wraithbg.jpg')", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#231112", input: "#703434", primaryDark: "#0075a0", tertiary: "#443333", text: "#f9e0e0", textDisabled: "#706060", textSubtle: "#d3c4c4", borderColor: "#604949", card: "#2717179c", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#ffa16b", background: "#2F0006", bgimg: "url('images/wraithbg.jpg')", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#231112", input: "#703434", primaryDark: "#0075a0", tertiary: "#443333", text: "#f9e0e0", textDisabled: "#706060", textSubtle: "#d3c4c4", borderColor: "#604949", card: "#271717", gradients: {
         bubblegum: "linear-gradient(139.73deg, #5b3131 0%, #512828 100%)",
     } });
 
