@@ -27,3 +27,4 @@ export { default as DiscordIcon } from "./Discord";
 export { default as ShieldIcon } from "./Shield";
 export { default as PlusIcon } from "./Plus";
 export { default as StoreIcon } from "./Store";
+export { default as XWRAIcon } from "./XWRA";
