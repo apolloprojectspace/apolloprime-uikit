@@ -119,8 +119,8 @@ export const socials = [
     icon: "TwitterIcon",
     items: [
       {
-        label: "Twitter @syfinance",
-        href: "https://twitter.com/syfinance",
+        label: "Twitter @apollopri_me",
+        href: "https://twitter.com/apollopri_me",
       },
       {        
         label: "Twitter @wraithswap",
@@ -131,7 +131,7 @@ export const socials = [
   {
     label: "Telegram",
     icon: "TelegramIcon",
-    href: "https://t.me/fantomsyfin",
+    href: "https://t.me/apollopri_me",
   },  
 ];
 
